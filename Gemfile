@@ -45,3 +45,5 @@ gem "devise", "~> 4.9"
 gem "jwt", "~> 2.9"
 
 gem "active_model_serializers", "~> 0.10.15"
+
+gem "bcrypt", "~> 3.1"
