@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   # root "posts#index"
   namespace :api do
     namespace :v1 do
-      post '/signup', to: 'authentications#signup'
-      post '/login', to: 'authentications#login'
+      post '/signup', to: 'authentication#signup'
+      post '/login', to: 'authentication#login'
     end
   end
 end

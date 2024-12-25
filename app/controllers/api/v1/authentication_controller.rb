@@ -1,5 +1,5 @@
-module api
-  module v1
+module Api
+  module V1
     class AuthenticationController < ApplicationController
       require 'jwt'
       # POST /api/v1/signup
@@ -27,12 +27,12 @@ module api
       private
 
       def user_params
-        params.require(:email, :password, :password_confirmation)
+        params.require(:user).permit(:email, :password, :password_confirmation)
       end
 
       def encode_token(user_id)
         payload = { user_id: user_id, exp: 24.hours.from_now.to_i }
-        JWT.encode(payload, Rails.application.secrets.secret_key_base)
+        JWT.encode(payload, Rails.application.credentials.jwt_secret)
       end
 
     end
